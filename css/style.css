@@ -29,10 +29,13 @@ background-color: #99ccff;
     border: 0;
   }
 
-.movieCard{
-   
-}
-
+  .main-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+  
 .overview{
     display: -webkit-box;
     -webkit-line-clamp: 5; /* 표시하고자 하는 라인 수 */

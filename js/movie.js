@@ -9,29 +9,29 @@ const options = {
   fetch('https://api.themoviedb.org/3/movie/top_rated?language=ko-KR&page=1', options)
     .then(response => response.json())
     .then(response => {
-        // console.log(response.results)
+        console.log(response.results)
         const mainDiv = document.querySelector(".main");  //메인요소 변수에 담음
         const html = response.results.map(element => {
             console.log(element)
-            let html = `<div class="movieCard"> 
+            let html = `<div>
             <div class="card">
             <img src="https://image.tmdb.org/t/p/w500/${element.poster_path}" class="card-img-top" alt="..."/>
             <p id="cardtitle">${element.title}</p>
             <p class="overview">${element.overview}</p>
+            </div>
             </div>`
             return html
-        }); // 14~18 html은 배열 형식으로 여러개 들어감
-        const div = document.createElement('div') // div를 만듬 <div></div>
-        div.className = "main-container" //<div class="main-container"></div>
-        div.innerHTML = html.join(""); //.join()은 배열을string으로 바꿔주는 메서드 
-        mainDiv.append(div);//메인에 만든 div를 추가함
-        console.log(html.join(""));
+    });
+    const div = document.createElement('div')
+    div.className = "main-container"
+    div.innerHTML = html.join("");
+    mainDiv.append(div);
+    console.log(html.join(""));
 
-        
-
+    div.addEventListener('click', () => {
+        const id = "먉-먀"
+        alert("품번은" + id + "이구만유~")
     })
+
+})
     .catch(err => console.error(err));
-
-    
-
-//function 이름() {alert('영화 id')} => 카드 버튼 -> onclick="이름" (조건문 찾아보기)
