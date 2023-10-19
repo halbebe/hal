@@ -14,7 +14,7 @@ const options = {
         const html = response.results.map(element => {
             console.log(element)
             let html = `<div>
-            <div class="card">
+            <div class="card" id="${element.id}">
             <img src="https://image.tmdb.org/t/p/w500/${element.poster_path}" class="card-img-top" alt="..."/>
             <p class="cardtitle">${element.title}</p>
             <p class="overview">${element.overview}</p>
@@ -28,10 +28,14 @@ const options = {
     mainDiv.append(div);
     console.log(html.join(""));
 
-    div.addEventListener('click', () => {
-        const id = "비밀"
-        alert("품번은 " + id + "이구만유~")
-    })
-
+    div.addEventListener('click', (event) => {
+      const card = event.target.closest('.card'); // 클릭된 요소의 가장 가까운 부모 카드 요소를 찾음
+      if (card) {
+          const id = card.id; // 클릭된 카드의 ID를 가져옴
+          
+         
+  alert("품번은 " + id + " 이구만유~");
+    }})
+    
 })
     .catch(err => console.error(err));
