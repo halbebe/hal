@@ -16,7 +16,7 @@ const options = {
             let html = `<div>
             <div class="card">
             <img src="https://image.tmdb.org/t/p/w500/${element.poster_path}" class="card-img-top" alt="..."/>
-            <p id="cardtitle">${element.title}</p>
+            <p class="cardtitle">${element.title}</p>
             <p class="overview">${element.overview}</p>
             </div>
             </div>`
@@ -29,8 +29,8 @@ const options = {
     console.log(html.join(""));
 
     div.addEventListener('click', () => {
-        const id = "먉-먀"
-        alert("품번은" + id + "이구만유~")
+        const id = "비밀"
+        alert("품번은 " + id + "이구만유~")
     })
 
 })
