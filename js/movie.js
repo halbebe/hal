@@ -16,7 +16,8 @@ const options = {
             let html = `<div>
             <div class="card" id="${element.id}">
             <img src="https://image.tmdb.org/t/p/w500/${element.poster_path}" class="card-img-top" alt="..."/>
-            <p class="cardtitle">${element.title}</p>
+            <h2 class="cardtitle">${element.title}</h2> 
+            <p class="star">할배점수 : ${element.vote_average}</p>
             <p class="overview">${element.overview}</p>
             </div>
             </div>`

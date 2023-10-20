@@ -1,59 +1,81 @@
 
 @font-face {
-  font-family: 'ChosunCentennial';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/ChosunCentennial.woff2') format('woff2');
+  font-family: 'BMEULJIRO';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BMEULJIRO.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 body{
   margin: 0;
-  font-family: 'ChosunCentennial';
+  font-family: 'BMEULJIRO';
 }
 
 .header{
     background-color: #398181;
     display: flex;
-    width: auto;
+    width: 100%;
+    height: 150px;
 margin: 0px 0px 0px 0px;
-color: #ffe5c2;
+color: #fddaad;
 padding: 0px 15px 0px 15px;
-font-family: 'ChosunCentennial';
-
+font-family: 'BMEULJIRO';
+-webkit-text-stroke: 1px #285c5c;
+font-size: 20px;
 }
 
 input.no_outline_img-button {
-  background: url("https://o.remove.bg/downloads/3d9c1c6c-90b6-4029-9610-595873463c5c/images-removebg-preview.png") no-repeat;
-  background-color: #e6c69d00;
-  width: 80px;
-  height: 80px;
+  background: url("https://o.remove.bg/downloads/d6056238-5862-43fb-bd09-31cd59c7cce8/81893769-%ED%88%AC%EB%AA%85-%ED%95%9C-%EB%B0%B0%EA%B2%BD%EC%97%90-cd-%EB%94%94%EC%8A%A4%ED%81%AC%EC%9E%85%EB%8B%88%EB%8B%A4-%ED%98%84%EC%8B%A4%EA%B0%90%EC%9E%88%EB%8A%94-cd-%EB%B2%A1%ED%84%B0-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%A0%88%EC%9D%B4-%EC%85%98-removebg-preview.png") no-repeat;
+  width: 130px;
+  height: 130px;
   background-size: cover;
   border: none;
-margin: 0px 25px 0px 25px;
 }
 
+input.no_outline_img-button:hover {
+  transform: rotate( 60deg );
+}
+
+input.no_outline_img-button{animation: rotate_image 6s linear infinite;transform-origin: 50% 50%;}
+
+@keyframes rotate_image{
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
 #search-input{
-  width: 800px;
+  width: 90%;
   margin: 0px 50px 0px 50px;
-  font-family: 'ChosunCentennial';
+  font-family: 'BMEULJIRO';
+color: #285c5c;
+-webkit-text-stroke: 1px #285c5c;
+
+}
+
+.search{
+  flex-grow: 1;
 }
 
 .search1{
   height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
+  justify-content: space-between;
 }
 
 input[type='text'] {
   background-color: #fffafa;
-  width: 75%;
   font-size: 1.2em;
   border: 0;
   outline: none;
   border-radius: 20px;
   padding: 10px 10px 10px 20px;
+
 }
 
 
@@ -66,6 +88,10 @@ input[type='text'] {
     padding-bottom: 1em;
   }
 
+.card:hover {
+  transform: scale(105%);
+}
+
   .card-img-top {
     width: 15em;
     height: 22em;
@@ -76,6 +102,9 @@ input[type='text'] {
     border: 0;
   }
 
+
+
+  
   .main-container{
     display: flex;
     flex-wrap: wrap;
@@ -86,8 +115,15 @@ input[type='text'] {
 .cardtitle{
   padding: 0px 15px;
   color: #398181;
+  -webkit-text-stroke: 0.3px  #285c5c;
+  overflow: hidden;
 }
   
+.star{
+  padding: 0px 15px;
+  color: #398181;
+}
+
 .overview{
     display: -webkit-box;
     -webkit-line-clamp: 5; /* 표시하고자 하는 라인 수 */
@@ -100,4 +136,3 @@ input[type='text'] {
     padding: 0px 15px;
     color: #398181;
   }
-
