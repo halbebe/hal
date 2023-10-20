@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>영검사</title>
+    <title>할배시네마</title>
     <link rel="stylesheet" href="./css/style.css">
     <script type="module" src="./js/movie.js"></script>
 </head>
@@ -11,13 +11,14 @@
 
 <body>
     <header class="header">
-<h1>할배네 DVD방</h1>
-    </header>
-    <form class="search" onsubmit="handleSearch(event)">
-    <label>영화 검색 : </label>
-    <input type="text" id="search-input" placeholder="제목 검색"/>
-    <button type="submit" id="search-btn">검색</button>
-    </form>
+        <span class="search1">
+        <h1>할배네 DVD방</h1>
+        <form class="search" onsubmit="handleSearch(event)">
+            <input type="text" id="search-input" placeholder="영화 제목 검색"/>
+        </form>
+            <input type="button" class="no_outline_img-button" onclick="alert('클릭!')">
+</span>
+            </header>
     <div class="main">
     </div>
 </body>

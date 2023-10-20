@@ -36,6 +36,7 @@ const options = {
          
   alert("품번은 " + id + " 이구만유~");
     }})
+
     
 })
     .catch(err => console.error(err));
