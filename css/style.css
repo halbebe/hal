@@ -117,6 +117,8 @@ input[type='text'] {
   color: #398181;
   -webkit-text-stroke: 0.3px  #285c5c;
   overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
   
 .star{
