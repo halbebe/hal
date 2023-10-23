@@ -11,7 +11,6 @@ let movieMap = new Map();
   fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
     .then(response => response.json())
     .then(response => {
-        console.log(response.results)
         const mainDiv = document.querySelector(".main");  //메인요소 변수에 담음
       
       let results = response.results;
@@ -26,7 +25,6 @@ let movieMap = new Map();
            <p class="overview">${element.overview}</p>
            </div>
            </div>`;
-            console.log(element)
             movieMap.set(element.title, card)
             div.appendChild(card)
       });
@@ -36,11 +34,10 @@ let movieMap = new Map();
     div.className = "main-container"
     // div.innerHTML = html.join("");
     mainDiv.append(div);
-    // console.log(html.join(""));
 
 
 const noOutlineImgButton = document.querySelector('#searchBtn');
-const searchtxt = document.querySelector('#search-input');
+const searchtxt = document.querySelector('#searchInput');
 
     div.addEventListener('click', (event) => {
       const card = event.target.closest('.card'); // 클릭된 요소의 가장 가까운 부모 카드 요소를 찾음
@@ -55,8 +52,8 @@ const searchtxt = document.querySelector('#search-input');
 function search() {
 const text  = searchtxt.value;
   response.results.map((element) => {
-    console.log(movieMap);
-    let cardtitle = (element.title);
+   
+    let cardtitle = element.title;
     if (cardtitle.toLowerCase().includes(text.toLowerCase())) {
       movieMap.get(cardtitle).style.display = 'block';
     } else {
@@ -69,13 +66,19 @@ noOutlineImgButton.addEventListener('click', () => {
   search();
 });
 
-searchtxt.focus();
-searchtxt.addEventListener('keyup', function (event) {
+searchtxt.addEventListener('keydown', function (event) {
+  
+  event.preventDefault();
+
   if (event.key === 'Enter') {
     search();
   }
+
+  
 });
 
+
+searchtxt.focus();
 
 
 
