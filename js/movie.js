@@ -67,8 +67,7 @@ noOutlineImgButton.addEventListener('click', () => {
 });
 
 searchtxt.addEventListener('keydown', function (event) {
-  
-  event.preventDefault();
+
 
   if (event.key === 'Enter') {
     search();
